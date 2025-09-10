@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Framework Buttons</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            text-align: center;
+        }
+        button {
+            padding: 12px 24px;
+            margin: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .react-btn {
+            background-color: #61dafb;
+            color: #000;
+        }
+        .react-btn:hover {
+            background-color: #21b8d4;
+        }
+        .angular-btn {
+            background-color: #dd0031;
+            color: #fff;
+        }
+        .angular-btn:hover {
+            background-color: #a50025;
+        }
+        .vue-btn {
+            background-color: #4fc08d;
+            color: #fff;
+        }
+        .vue-btn:hover {
+            background-color: #369870;
+        }
+    </style>
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "<YOUR_APP_ID>",
+          serviceWorkerParam: { scope: "/" },
+          serviceWorkerPath: "OneSignalSDKWorker.js",
+          allowLocalhostAsSecureOrigin: true
+        });
+      });
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1>Frontend Frameworks</h1>
+        <button class="react-btn" onclick="logFramework('React')">React</button>
+        <button class="angular-btn" onclick="logFramework('Angular')">Angular</button>
+        <button class="vue-btn" onclick="logFramework('VueJS')">VueJS</button>
+    </div>
+
+    <script>
+        function logFramework(frameworkName) {
+            console.log(frameworkName);
+        }
+    </script>
+</body>
+</html>
