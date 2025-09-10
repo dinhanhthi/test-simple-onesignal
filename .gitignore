@@ -1,0 +1,6 @@
+# Local config with secrets (do not commit)
+config.js
+
+# macOS metadata
+.DS_Store
+
